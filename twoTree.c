@@ -48,14 +48,14 @@ _Bool isempty(SNode head){
 void preOrder(Node node){
     struct StackNode head;
     init(&head);
-    while (node){
+    while (node||!isempty(&head)){
         while (node!=NULL){
             printf("%c",node->data);
             pushStack(&head,node);
             node=node->left;
         }
-        Node node= popStack(&head);
-        node=node->right;
+        Node node1= popStack(&head);
+        node=node1->right;
     }
 }
 int main(){
@@ -78,7 +78,7 @@ int main(){
     b->right = e;
     c->right = f;
     c->left = NULL;
-    d->left = e->right = NULL;
+    d->left =d->right = NULL;
     e->left = e->right = NULL;
     f->left = f->right = NULL;
     preOrder(a);
