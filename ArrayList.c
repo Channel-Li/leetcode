@@ -2,7 +2,7 @@
 #include "stdlib.h"
 typedef int Element;
 typedef struct List{
-    Element * array;
+    int * array;
     int capacity;
     int size;
 }*ArrayList,aList;
@@ -20,8 +20,8 @@ _Bool  insertList(ArrayList list ,Element data,int index){
         return 0;
     }
     if(list->size==list->capacity){
-        int newcapacity=list->capacity+(list->capacity>>1);
-        Element * newarray =realloc(list->array,newcapacity*sizeof (Element));
+        int newcapacity=list->capacity+(list->capacity*1.5);
+        Element * newarray =realloc(list->array,newcapacity*sizeof (int));
         if(newarray==NULL)return 0;
         list->array=newarray;
         list->capacity=newcapacity;

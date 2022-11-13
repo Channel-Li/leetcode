@@ -1,16 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
-
-int fib(int n){
-    if(n==1||n==2){
-        return 1;
+void fun(int a,int b){
+    int temp =a;
+    if (temp=0)
+    {
+        return;
     }
-    return fib(n-1)+ fib(n-2);
+
+    for (int i = 1; i <= temp; i++)
+    {
+        printf("%d*%d ",temp,i);
+    }
+    printf("\n");
+    fun(temp-1,b);
+
+
+
 }
-int main() {
 
-    printf("%d",fib(10));
-
-
-    return 0;
+int main(){
+fun(9,1);
 }
