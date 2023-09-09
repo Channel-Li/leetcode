@@ -1,7 +1,8 @@
 #include <stdio.h>
-
+#include<iostream>
+using namespace std;
 int main() {
-
-    return 0;
+    cout<<"hello"
+    return 0;   
 }
 
